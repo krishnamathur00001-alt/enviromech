@@ -3,26 +3,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enviromech Solutions</title>
-  <meta name="description" content="Sustainable engineering, CAD optimization, and eco-friendly rapid prototyping solutions." />  <style>
+  <meta name="description" content="Sustainable engineering, CAD optimization, and eco-friendly rapid prototyping solutions." />  <!-- Google Font -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">  <style>
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Segoe UI, sans-serif;
+      font-family:'Inter', sans-serif;
     }
 
     body{
-      background:#f3f6f4;
-      color:#1e1e1e;
+      background:#f5f7f6;
+      color:#1c1c1c;
+      scroll-behavior:smooth;
     }
 
-    /* NAV */
+    /* NAVBAR */
     .nav{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:15px 30px;
-      background:#0b3d2e;
+      padding:14px 28px;
+      background:rgba(10,60,45,0.95);
+      backdrop-filter: blur(10px);
       color:white;
       position:sticky;
       top:0;
@@ -31,65 +33,62 @@
 
     .nav a{
       color:white;
-      margin-left:15px;
+      margin-left:16px;
       text-decoration:none;
       font-weight:500;
+      opacity:0.9;
     }
+
+    .nav a:hover{opacity:1}
 
     /* HERO */
     .hero{
-      background:linear-gradient(135deg,#0b3d2e,#1f8a5b);
+      background:linear-gradient(135deg,#06281d,#18a06a);
       color:white;
       text-align:center;
-      padding:110px 20px;
+      padding:130px 20px;
       position:relative;
-      overflow:hidden;
     }
 
-    .logo{
-      width:70px;
-      height:70px;
-      background:white;
-      color:#0b3d2e;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:bold;
-      margin:0 auto 15px;
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      background:rgba(255,255,255,0.15);
+      border-radius:20px;
+      font-size:13px;
+      margin-bottom:15px;
     }
 
     .hero h1{
-      font-size:48px;
-      animation:fadeIn 1s ease-in-out;
+      font-size:54px;
+      font-weight:700;
+      animation:fadeUp 1s ease;
     }
 
     .hero p{
-      margin-top:10px;
+      margin-top:12px;
       font-size:18px;
       opacity:0.9;
     }
 
-    @keyframes fadeIn{
-      from{opacity:0; transform:translateY(-20px)}
+    @keyframes fadeUp{
+      from{opacity:0; transform:translateY(20px)}
       to{opacity:1; transform:translateY(0)}
     }
 
     .btn{
       display:inline-block;
-      margin:10px;
-      padding:12px 22px;
-      border-radius:8px;
+      margin:12px;
+      padding:12px 24px;
+      border-radius:10px;
       background:white;
-      color:#0b3d2e;
-      font-weight:bold;
+      color:#0a3c2d;
+      font-weight:600;
       text-decoration:none;
       transition:0.3s;
     }
 
-    .btn:hover{
-      transform:scale(1.05);
-    }
+    .btn:hover{transform:scale(1.05)}
 
     .btn.green{
       background:#25d366;
@@ -98,131 +97,144 @@
 
     /* CONTAINER */
     .container{
-      max-width:1100px;
+      max-width:1150px;
       margin:auto;
-      padding:40px 20px;
+      padding:50px 20px;
     }
 
     .section{
-      margin:70px 0;
+      margin:80px 0;
     }
 
     h2{
-      color:#0b3d2e;
-      margin-bottom:15px;
+      font-size:28px;
+      margin-bottom:18px;
+      color:#0a3c2d;
     }
+
+    p{color:#444}
 
     /* GRID */
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-      gap:20px;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:22px;
     }
 
     .card{
-      background:white;
-      padding:20px;
-      border-radius:12px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+      background:rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      padding:22px;
+      border-radius:14px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
       transition:0.3s;
+      border:1px solid rgba(0,0,0,0.05);
     }
 
     .card:hover{
-      transform:translateY(-6px);
+      transform:translateY(-8px);
     }
 
-    /* PROJECTS */
-    .project-img{
-      width:100%;
-      border-radius:10px;
-      margin-bottom:10px;
-    }
-
-    /* CTA */
-    .cta{
+    /* STATS */
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
       text-align:center;
-      padding:50px;
-      background:#e8f5ee;
-      border-radius:12px;
+    }
+
+    .stat{
+      background:white;
+      padding:28px;
+      border-radius:14px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.06);
+    }
+
+    .stat h3{
+      font-size:34px;
+      color:#18a06a;
+    }
+
+    /* FLOAT BUTTON */
+    .float{
+      position:fixed;
+      bottom:22px;
+      right:22px;
+      background:#25d366;
+      color:white;
+      padding:14px 18px;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
     }
 
     /* FOOTER */
     footer{
       text-align:center;
-      padding:25px;
-      background:#0b3d2e;
+      padding:30px;
+      background:#06281d;
       color:white;
-      margin-top:40px;
+      margin-top:50px;
     }
   </style></head><body><div class="nav">
   <div><b>Enviromech</b></div>
   <div>
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
+    <a href="#stats">Impact</a>
     <a href="#contact">Contact</a>
   </div>
 </div><div class="hero">
-  <div class="logo">EM</div>
+  <div class="badge">Sustainable Engineering Startup</div>
   <h1>Build Smarter. Build Greener.</h1>
-  <p>Sustainable CAD Design & Rapid Prototyping Solutions</p><a href="#contact" class="btn">Get Started</a>
-
+  <p>Eco-Friendly CAD Design • Rapid Prototyping • Engineering Innovation</p>
+  <a href="#contact" class="btn">Get Started</a>
 </div><div class="container">  <div class="section" id="about">
     <h2>🌱 About Us</h2>
     <p>
-      Enviromech Solutions is a sustainable engineering startup focused on eco-friendly CAD design and rapid prototyping.
-      We help students and startups reduce cost, waste, and development time using smart engineering solutions.
+      Enviromech Solutions is a next-generation engineering startup focused on sustainable design, CAD optimization, and rapid prototyping to reduce cost, time, and environmental impact.
     </p>
   </div>  <div class="section" id="services">
     <h2>⚙️ Services</h2>
     <div class="grid">
       <div class="card">Eco-Friendly 3D Printing</div>
-      <div class="card">CAD Design Optimization</div>
+      <div class="card">CAD Optimization</div>
       <div class="card">Rapid Prototyping</div>
       <div class="card">Mechanical Simulation</div>
     </div>
-  </div>  <div class="section" id="projects">
-    <h2>📊 Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <img class="project-img" src="https://images.unsplash.com/photo-1581091870622-1e7f8c0f5d7c" />
-        Optimized Flange Coupling Design
-      </div>
-      <div class="card">
-        <img class="project-img" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758" />
-        Lightweight Mechanical Frame
-      </div>
-      <div class="card">
-        <img class="project-img" src="https://images.unsplash.com/photo-1581093588401-12b6c3f2b4a6" />
-        Eco 3D Printed Prototype
-      </div>
+  </div>  <div class="section" id="stats">
+    <h2>📊 Impact</h2>
+    <div class="stats">
+      <div class="stat"><h3>40%</h3><p>Waste Reduced</p></div>
+      <div class="stat"><h3>2x</h3><p>Faster Design</p></div>
+      <div class="stat"><h3>100+</h3><p>Projects Completed</p></div>
     </div>
   </div>  <div class="section" id="contact">
-    <h2>📩 Contact Us</h2>
+    <h2>📩 Contact</h2>
     <div class="grid"><div class="card">
-    <h3>WhatsApp 1</h3>
+    <h3>WhatsApp</h3>
     <p>9870694410</p>
-    <a class="btn green" href="https://wa.me/919870694410">Chat Now</a>
+    <a class="btn green" href="https://wa.me/919870694410">Chat</a>
   </div>
 
   <div class="card">
-    <h3>WhatsApp 2</h3>
+    <h3>WhatsApp</h3>
     <p>9528992913</p>
-    <a class="btn green" href="https://wa.me/919528992913">Chat Now</a>
+    <a class="btn green" href="https://wa.me/919528992913">Chat</a>
   </div>
 
   <div class="card">
     <h3>Email</h3>
     <p>krishnamathur00001@gmail.com</p>
-    <a class="btn" href="mailto:krishnamathur00001@gmail.com">Send Email</a>
+    <a class="btn" href="mailto:krishnamathur00001@gmail.com">Email</a>
   </div>
 
 </div>
 
-  </div>  <div class="section cta">
-    <h2>Ready to Build Your Idea?</h2>
-    <p>Let’s turn engineering concepts into real-world sustainable products.</p>
-  </div></div><footer>
+  </div></div><a class="float" href="https://wa.me/919870694410">WhatsApp</a>
+
+<footer>
   © 2026 Enviromech Solutions | Sustainable Engineering Future
 </footer></body>
 </html>
