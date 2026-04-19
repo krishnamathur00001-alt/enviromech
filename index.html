@@ -1,205 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enviromech Solutions</title>
-  <meta name="description" content="Sustainable engineering, CAD optimization, and eco-friendly rapid prototyping solutions." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enviromech Solutions</title>
 
-  <meta name="keywords" content="CAD design, 3D printing, sustainable engineering, prototyping, Enviromech">
-  <meta name="author" content="Enviromech Solutions">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+body{
+  background:#f5f7f6;
+  color:#1c1c1c;
+}
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Inter', sans-serif;
-    }
+/* NAVBAR */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 28px;
+  background:#0a3c2d;
+  color:white;
+  position:sticky;
+  top:0;
+}
 
-    body{
-      background:#f5f7f6;
-      color:#1c1c1c;
-      scroll-behavior:smooth;
-    }
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+}
 
-    /* NAVBAR */
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:14px 28px;
-      background:rgba(10,60,45,0.95);
-      backdrop-filter: blur(10px);
-      color:white;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
+.logo img{
+  width:42px;
+  height:42px;
+  background:white;
+  padding:4px;
+  border-radius:8px;
+}
 
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:700;
-      font-size:18px;
-    }
+.nav a{
+  color:white;
+  margin-left:16px;
+  text-decoration:none;
+}
 
-    .logo img{
-      width:38px;
-      height:38px;
-      object-fit:contain;
-      border-radius:8px;
-    }
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#06281d,#18a06a);
+  color:white;
+  text-align:center;
+  padding:120px 20px;
+}
 
-    .nav a{
-      color:white;
-      margin-left:16px;
-      text-decoration:none;
-      font-weight:500;
-      opacity:0.9;
-    }
+.hero img{
+  width:110px;
+  margin-bottom:15px;
+}
 
-    .nav a:hover{opacity:1}
+.hero h1{
+  font-size:42px;
+}
 
-    /* HERO */
-    .hero{
-      background:linear-gradient(135deg,#06281d,#18a06a);
-      color:white;
-      text-align:center;
-      padding:130px 20px;
-    }
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 22px;
+  border-radius:8px;
+  background:white;
+  color:#0a3c2d;
+  text-decoration:none;
+  font-weight:600;
+}
 
-    .badge{
-      display:inline-block;
-      padding:8px 14px;
-      background:rgba(255,255,255,0.15);
-      border-radius:20px;
-      font-size:13px;
-      margin-bottom:15px;
-    }
+.btn.green{
+  background:#25d366;
+  color:white;
+}
 
-    .hero h1{
-      font-size:54px;
-      font-weight:700;
-    }
+/* SECTIONS */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-    .hero p{
-      margin-top:12px;
-      font-size:18px;
-      opacity:0.9;
-    }
+.section{margin:60px 0;}
 
-    .btn{
-      display:inline-block;
-      margin:12px;
-      padding:12px 24px;
-      border-radius:10px;
-      background:white;
-      color:#0a3c2d;
-      font-weight:600;
-      text-decoration:none;
-      transition:0.3s;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
 
-    .btn:hover{transform:scale(1.05)}
+.card{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
 
-    .btn.green{
-      background:#25d366;
-      color:white;
-    }
+/* FLOAT BUTTON */
+.float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  padding:14px;
+  border-radius:50%;
+  text-decoration:none;
+}
 
-    /* CONTAINER */
-    .container{
-      max-width:1150px;
-      margin:auto;
-      padding:50px 20px;
-    }
-
-    .section{margin:80px 0;}
-
-    h2{
-      font-size:28px;
-      margin-bottom:18px;
-      color:#0a3c2d;
-    }
-
-    /* GRID */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:22px;
-    }
-
-    .card{
-      background:rgba(255,255,255,0.9);
-      padding:22px;
-      border-radius:14px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.08);
-      text-align:center;
-      transition:0.3s;
-      border:1px solid rgba(0,0,0,0.05);
-    }
-
-    .card:hover{
-      transform:translateY(-10px) scale(1.02);
-      box-shadow:0 15px 30px rgba(0,0,0,0.12);
-    }
-
-    .card i{
-      font-size:26px;
-      color:#18a06a;
-      margin-bottom:10px;
-    }
-
-    /* STATS */
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:20px;
-      text-align:center;
-    }
-
-    .stat{
-      background:white;
-      padding:28px;
-      border-radius:14px;
-      box-shadow:0 10px 20px rgba(0,0,0,0.06);
-    }
-
-    .stat h3{
-      font-size:34px;
-      color:#18a06a;
-    }
-
-    /* FLOAT BUTTON */
-    .float{
-      position:fixed;
-      bottom:22px;
-      right:22px;
-      background:#25d366;
-      color:white;
-      padding:14px 18px;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow:0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    footer{
-      text-align:center;
-      padding:30px;
-      background:#06281d;
-      color:white;
-    }
-  </style>
+footer{
+  background:#06281d;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+</style>
 </head>
 
 <body>
@@ -207,92 +131,97 @@
 <!-- NAVBAR -->
 <div class="nav">
   <div class="logo">
-    <img src="logo.png" alt="Enviromech Logo">
+    <img src="logo.png" alt="logo">
     <span>Enviromech</span>
   </div>
 
   <div>
-    <a href="#about"><i class="fa-solid fa-circle-info"></i> About</a>
-    <a href="#services"><i class="fa-solid fa-gears"></i> Services</a>
-    <a href="#stats"><i class="fa-solid fa-chart-line"></i> Impact</a>
-    <a href="#contact"><i class="fa-solid fa-phone"></i> Contact</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="badge"><i class="fa-solid fa-seedling"></i> Sustainable Engineering Startup</div>
-  <h1>Engineering a Sustainable Future</h1>
-  <p>CAD Design • Simulation • Eco-Friendly Prototyping</p>
+  <img src="logo.png" alt="logo">
+
+  <h1>Reduce Material Waste by 40%</h1>
+  <p>Smarter CAD • Faster Prototyping • Sustainable Design</p>
+
+  <a href="#contact" class="btn green">Get Free Consultation</a>
   <a href="#services" class="btn">Explore Services</a>
-  <a href="#contact" class="btn green">Contact Now</a>
 </div>
 
 <div class="container">
 
-  <!-- ABOUT -->
-  <div class="section" id="about">
-    <h2><i class="fa-solid fa-circle-info"></i> About Us</h2>
-    <p>
-      Enviromech Solutions is a student-led engineering initiative focused on reducing material waste and improving product design efficiency through CAD optimization, simulation-based validation, and rapid prototyping technologies.
-    </p>
-  </div>
+<!-- ABOUT -->
+<div class="section" id="about">
+  <h2>About Us</h2>
+  <p>
+    Enviromech Solutions is a student-led engineering startup focused on
+    reducing material waste and improving design efficiency using CAD optimization,
+    simulation, and eco-friendly prototyping.
+  </p>
+</div>
 
-  <!-- SERVICES -->
-  <div class="section" id="services">
-    <h2><i class="fa-solid fa-gears"></i> Services</h2>
-    <div class="grid">
-      <div class="card"><i class="fa-solid fa-recycle"></i><br>Sustainable 3D Printing</div>
-      <div class="card"><i class="fa-solid fa-drafting-compass"></i><br>CAD Optimization</div>
-      <div class="card"><i class="fa-solid fa-bolt"></i><br>Rapid Prototyping</div>
-      <div class="card"><i class="fa-solid fa-cube"></i><br>Mechanical Simulation</div>
+<!-- SERVICES -->
+<div class="section" id="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card">Sustainable 3D Printing</div>
+    <div class="card">CAD Optimization</div>
+    <div class="card">Rapid Prototyping</div>
+    <div class="card">Mechanical Simulation</div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<div class="section">
+  <h2>Why Choose Us</h2>
+  <div class="grid">
+    <div class="card">Low-cost solutions</div>
+    <div class="card">Eco-friendly approach</div>
+    <div class="card">2x faster delivery</div>
+    <div class="card">Hands-on expertise</div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <div class="grid">
+
+    <div class="card">
+      WhatsApp<br>
+      9870694410<br>
+      <a class="btn green" href="https://wa.me/919870694410">Chat</a>
     </div>
-  </div>
 
-  <!-- STATS -->
-  <div class="section" id="stats">
-    <h2><i class="fa-solid fa-chart-line"></i> Impact</h2>
-    <div class="stats">
-      <div class="stat"><h3>25+</h3><p>Projects Designed</p></div>
-      <div class="stat"><h3>40%</h3><p>Waste Reduction</p></div>
-      <div class="stat"><h3>2x</h3><p>Faster Design</p></div>
+    <div class="card">
+      WhatsApp<br>
+      9528992913<br>
+      <a class="btn green" href="https://wa.me/919528992913">Chat</a>
     </div>
-  </div>
 
-  <!-- CONTACT -->
-  <div class="section" id="contact">
-    <h2><i class="fa-solid fa-phone"></i> Contact</h2>
-
-    <div class="grid">
-      <div class="card">
-        <i class="fa-brands fa-whatsapp"></i><br>
-        9870694410<br>
-        <a class="btn green" href="https://wa.me/919870694410">Chat</a>
-      </div>
-
-      <div class="card">
-        <i class="fa-brands fa-whatsapp"></i><br>
-        9528992913<br>
-        <a class="btn green" href="https://wa.me/919528992913">Chat</a>
-      </div>
-
-      <div class="card">
-        <i class="fa-solid fa-envelope"></i><br>
-        krishnamathur00001@gmail.com<br>
-        <a class="btn" href="mailto:krishnamathur00001@gmail.com">Email</a>
-      </div>
+    <div class="card">
+      Email<br>
+      krishnamathur00001@gmail.com<br>
+      <a class="btn" href="mailto:krishnamathur00001@gmail.com">Send Email</a>
     </div>
+
   </div>
+</div>
 
 </div>
 
 <!-- FLOAT BUTTON -->
 <a class="float" href="https://wa.me/919870694410">
-  <i class="fa-brands fa-whatsapp"></i> Chat
+  <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <footer>
-  © 2026 Enviromech Solutions | Sustainable Engineering Future
+  © 2026 Enviromech Solutions | Sustainable Engineering
 </footer>
 
 </body>
