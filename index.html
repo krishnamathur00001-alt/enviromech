@@ -6,90 +6,38 @@
 <title>Enviromech Solutions</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth;}
 
-body{
-  background:#f5f7f6;
-  color:#1c1c1c;
-}
+body{background:#f5f7f6;color:#1c1c1c;}
 
-/* NAVBAR */
 .nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 28px;
-  background:#0a3c2d;
-  color:white;
-  position:sticky;
-  top:0;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 28px;background:#0a3c2d;color:white;position:sticky;top:0;z-index:1000;
 }
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;}
+.logo img{width:40px;background:white;padding:4px;border-radius:8px;}
+.nav a{color:white;margin-left:18px;text-decoration:none;}
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:700;
-}
-
-.logo img{
-  width:42px;
-  height:42px;
-  background:white;
-  padding:4px;
-  border-radius:8px;
-}
-
-.nav a{
-  color:white;
-  margin-left:16px;
-  text-decoration:none;
-}
-
-/* HERO */
 .hero{
   background:linear-gradient(135deg,#06281d,#18a06a);
-  color:white;
-  text-align:center;
-  padding:120px 20px;
+  color:white;text-align:center;padding:120px 20px;
 }
-
-.hero img{
-  width:110px;
-  margin-bottom:15px;
-}
-
-.hero h1{
-  font-size:42px;
-}
+.hero img{width:100px;margin-bottom:10px;}
+.hero h1{font-size:42px;}
+.hero p{margin:10px 0 20px;opacity:0.9;}
 
 .btn{
-  display:inline-block;
-  margin:10px;
-  padding:12px 22px;
-  border-radius:8px;
-  background:white;
-  color:#0a3c2d;
-  text-decoration:none;
-  font-weight:600;
+  padding:12px 24px;border-radius:8px;text-decoration:none;
+  font-weight:600;margin:8px;display:inline-block;
 }
+.btn.white{background:white;color:#0a3c2d;}
+.btn.green{background:#25d366;color:white;}
 
-.btn.green{
-  background:#25d366;
-  color:white;
-}
-
-/* SECTIONS */
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px;
-}
-
-.section{margin:60px 0;}
+.container{max-width:1100px;margin:auto;padding:40px 20px;}
+.section{margin:70px 0;}
+h2{color:#0a3c2d;margin-bottom:15px;}
 
 .grid{
   display:grid;
@@ -98,59 +46,53 @@ body{
 }
 
 .card{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
+  background:white;padding:20px;border-radius:12px;text-align:center;
   box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.card:hover{transform:translateY(-5px);}
+
+.highlight{
+  background:#e6f4ef;padding:25px;border-radius:12px;
 }
 
-/* FLOAT BUTTON */
 .float{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25d366;
-  color:white;
-  padding:14px;
-  border-radius:50%;
+  position:fixed;bottom:20px;right:20px;
+  background:#25d366;color:white;padding:14px;border-radius:50%;
   text-decoration:none;
 }
 
 footer{
-  background:#06281d;
-  color:white;
-  text-align:center;
-  padding:20px;
+  background:#06281d;color:white;text-align:center;padding:20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <div class="nav">
   <div class="logo">
-    <img src="logo.png" alt="logo">
-    <span>Enviromech</span>
+    <img src="logo.png">
+    Enviromech
   </div>
-
   <div>
     <a href="#about">About</a>
-    <a href="#services">Services</a>
+    <a href="#problem">Problem</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <img src="logo.png" alt="logo">
-
-  <h1>Reduce Material Waste by 40%</h1>
-  <p>Smarter CAD • Faster Prototyping • Sustainable Design</p>
+  <img src="logo.png">
+  <h1>Cut Engineering Waste by 40%</h1>
+  <p>AI Guided CAD • Sustainable Prototyping • Faster Projects</p>
 
   <a href="#contact" class="btn green">Get Free Consultation</a>
-  <a href="#services" class="btn">Explore Services</a>
+  <a href="#features" class="btn white">Explore Platform</a>
 </div>
 
 <div class="container">
@@ -159,37 +101,113 @@ footer{
 <div class="section" id="about">
   <h2>About Us</h2>
   <p>
-    Enviromech Solutions is a student-led engineering startup focused on
-    reducing material waste and improving design efficiency using CAD optimization,
-    simulation, and eco-friendly prototyping.
+    Enviromech Solutions is a student-led startup helping engineering students
+    and innovators convert ideas into functional, eco-friendly prototypes using
+    CAD optimization, AI guidance, and rapid prototyping.
   </p>
 </div>
 
-<!-- SERVICES -->
-<div class="section" id="services">
-  <h2>Services</h2>
-  <div class="grid">
-    <div class="card">Sustainable 3D Printing</div>
-    <div class="card">CAD Optimization</div>
-    <div class="card">Rapid Prototyping</div>
-    <div class="card">Mechanical Simulation</div>
+<!-- PROBLEM -->
+<div class="section" id="problem">
+  <h2>Industry Problem</h2>
+
+  <div class="highlight">
+    <h3>⚠️ Only 42–45% of graduates are employable</h3>
+    <p>This shows a massive practical skill gap in engineering.</p>
+
+    <br>
+
+    <p>
+      Students struggle due to:
+      <br>• Lack of hands-on guidance  
+      <br>• High prototyping cost  
+      <br>• Design errors & material waste  
+    </p>
   </div>
 </div>
 
-<!-- WHY US -->
+<!-- USERS -->
 <div class="section">
-  <h2>Why Choose Us</h2>
+  <h2>Who We Serve</h2>
+
   <div class="grid">
-    <div class="card">Low-cost solutions</div>
-    <div class="card">Eco-friendly approach</div>
-    <div class="card">2x faster delivery</div>
-    <div class="card">Hands-on expertise</div>
+    <div class="card">🎓 Engineering Students</div>
+    <div class="card">🏫 Colleges & Faculty</div>
+    <div class="card">🚀 Student Innovators</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section" id="features">
+  <h2>Platform Features</h2>
+
+  <div class="grid">
+    <div class="card">Guided CAD Workflow</div>
+    <div class="card">AI Error Detection</div>
+    <div class="card">Eco Design Tips</div>
+    <div class="card">Templates & Tutorials</div>
+    <div class="card">Material Suggestions</div>
+    <div class="card">Progress Dashboard</div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="section">
+  <h2>Benefits</h2>
+
+  <div class="grid">
+    <div class="card">⚙️ Faster Prototyping</div>
+    <div class="card">💸 Reduced Cost & Waste</div>
+    <div class="card">😌 Less Stress</div>
+    <div class="card">🏆 Better Results</div>
+  </div>
+</div>
+
+<!-- ADVANTAGE -->
+<div class="section">
+  <h2>Why We Are Different</h2>
+
+  <div class="grid">
+    <div class="card">Guided Learning + CAD</div>
+    <div class="card">AI-based Checks</div>
+    <div class="card">Eco-friendly Approach</div>
+    <div class="card">Built for Students</div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div class="section" id="pricing">
+  <h2>Pricing</h2>
+
+  <div class="highlight">
+    <h3>₹299 / Month</h3>
+    <p>Affordable subscription for students and colleges</p>
+  </div>
+</div>
+
+<!-- TEAM -->
+<div class="section">
+  <h2>Our Team</h2>
+
+  <div class="grid">
+    <div class="card">
+      Krishna Mathur<br>
+      Mechanical Engineer<br>
+      CAD & Prototyping
+    </div>
+
+    <div class="card">
+      Khushi Singh<br>
+      Mechanical Engineer<br>
+      Marketing & Research
+    </div>
   </div>
 </div>
 
 <!-- CONTACT -->
 <div class="section" id="contact">
   <h2>Contact</h2>
+
   <div class="grid">
 
     <div class="card">
@@ -207,7 +225,7 @@ footer{
     <div class="card">
       Email<br>
       krishnamathur00001@gmail.com<br>
-      <a class="btn" href="mailto:krishnamathur00001@gmail.com">Send Email</a>
+      <a class="btn white" href="mailto:krishnamathur00001@gmail.com">Email</a>
     </div>
 
   </div>
@@ -215,10 +233,7 @@ footer{
 
 </div>
 
-<!-- FLOAT BUTTON -->
-<a class="float" href="https://wa.me/919870694410">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+<a class="float" href="https://wa.me/919870694410">💬</a>
 
 <footer>
   © 2026 Enviromech Solutions | Sustainable Engineering
