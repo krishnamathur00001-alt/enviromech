@@ -10,60 +10,143 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth;}
 
-body{background:#f5f7f6;color:#1c1c1c;}
+body{
+  background:linear-gradient(180deg,#031d15,#06281d,#0a3c2d);
+  color:white;
+}
 
+/* NAV */
 .nav{
   display:flex;justify-content:space-between;align-items:center;
-  padding:14px 28px;background:#0a3c2d;color:white;position:sticky;top:0;z-index:1000;
+  padding:18px 40px;
+  position:sticky;top:0;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.05);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:1000;
 }
+
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;}
-.logo img{width:40px;background:white;padding:4px;border-radius:8px;}
-.nav a{color:white;margin-left:18px;text-decoration:none;}
+.logo img{width:45px;}
+.nav a{margin-left:20px;text-decoration:none;color:white;opacity:0.85;}
+.nav a:hover{opacity:1;}
 
+/* HERO */
 .hero{
-  background:linear-gradient(135deg,#06281d,#18a06a);
-  color:white;text-align:center;padding:120px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:100px 10%;
+  flex-wrap:wrap;
 }
-.hero img{width:100px;margin-bottom:10px;}
-.hero h1{font-size:42px;}
-.hero p{margin:10px 0 20px;opacity:0.9;}
 
+.hero-text{max-width:550px;}
+
+.hero h1{
+  font-size:48px;
+  line-height:1.2;
+}
+
+.hero span{
+  background:linear-gradient(90deg,#38d39f,#4fd1c5);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  margin:20px 0;
+  opacity:0.8;
+}
+
+/* BUTTON */
 .btn{
-  padding:12px 24px;border-radius:8px;text-decoration:none;
-  font-weight:600;margin:8px;display:inline-block;
-}
-.btn.white{background:white;color:#0a3c2d;}
-.btn.green{background:#25d366;color:white;}
-
-.container{max-width:1100px;margin:auto;padding:40px 20px;}
-.section{margin:70px 0;}
-h2{color:#0a3c2d;margin-bottom:15px;}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
+  padding:12px 24px;
+  border-radius:10px;
+  text-decoration:none;
+  margin-right:10px;
+  display:inline-block;
+  font-weight:600;
 }
 
+.btn.primary{
+  background:linear-gradient(135deg,#25d366,#1fae56);
+  color:white;
+}
+
+.btn.secondary{
+  border:1px solid rgba(255,255,255,0.3);
+  color:white;
+}
+
+/* STATS */
+.stats{
+  display:flex;
+  gap:30px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.stat h3{color:#38d39f;}
+
+/* GLASS CARD */
 .card{
-  background:white;padding:20px;border-radius:12px;text-align:center;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border-radius:16px;
+  padding:25px;
+  border:1px solid rgba(255,255,255,0.08);
   transition:0.3s;
 }
-.card:hover{transform:translateY(-5px);}
 
-.highlight{
-  background:#e6f4ef;padding:25px;border-radius:12px;
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
-.float{
-  position:fixed;bottom:20px;right:20px;
-  background:#25d366;color:white;padding:14px;border-radius:50%;
-  text-decoration:none;
+/* SECTION */
+.container{max-width:1200px;margin:auto;padding:60px 20px;}
+.section{margin:80px 0;}
+
+h2{text-align:center;margin-bottom:40px;}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
 }
 
+/* PRICING */
+.pricing{
+  text-align:center;
+  padding:40px;
+}
+
+/* CONTACT */
+.contact-card{
+  background:linear-gradient(135deg,#25d366,#128c7e);
+  padding:25px;
+  border-radius:16px;
+  text-align:center;
+}
+
+/* FOOTER */
 footer{
-  background:#06281d;color:white;text-align:center;padding:20px;
+  text-align:center;
+  padding:30px;
+  opacity:0.7;
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.6s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
@@ -76,9 +159,8 @@ footer{
     <img src="logo.png">
     Enviromech
   </div>
+
   <div>
-    <a href="#about">About</a>
-    <a href="#problem">Problem</a>
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
@@ -87,53 +169,31 @@ footer{
 
 <!-- HERO -->
 <div class="hero">
-  <img src="logo.png">
-  <h1>Cut Engineering Waste by 40%</h1>
-  <p>AI Guided CAD • Sustainable Prototyping • Faster Projects</p>
+  <div class="hero-text fade">
+    <h1>Build Smarter.<br><span>Design Sustainable.</span></h1>
+    <p>AI-powered CAD guidance for faster, eco-friendly prototyping.</p>
 
-  <a href="#contact" class="btn green">Get Free Consultation</a>
-  <a href="#features" class="btn white">Explore Platform</a>
+    <a href="#contact" class="btn primary">Get Started</a>
+    <a href="#features" class="btn secondary">Explore</a>
+
+    <div class="stats">
+      <div class="stat"><h3>40%</h3><p>Waste Reduction</p></div>
+      <div class="stat"><h3>2x</h3><p>Faster Builds</p></div>
+      <div class="stat"><h3>500+</h3><p>Users</p></div>
+    </div>
+  </div>
+
+  <img src="logo.png" width="350">
 </div>
 
 <div class="container">
 
-<!-- ABOUT -->
-<div class="section" id="about">
-  <h2>About Us</h2>
-  <p>
-    Enviromech Solutions is a student-led startup helping engineering students
-    and innovators convert ideas into functional, eco-friendly prototypes using
-    CAD optimization, AI guidance, and rapid prototyping.
-  </p>
-</div>
-
 <!-- PROBLEM -->
-<div class="section" id="problem">
+<div class="section fade">
   <h2>Industry Problem</h2>
-
-  <div class="highlight">
-    <h3>⚠️ Only 42–45% of graduates are employable</h3>
-    <p>This shows a massive practical skill gap in engineering.</p>
-
-    <br>
-
-    <p>
-      Students struggle due to:
-      <br>• Lack of hands-on guidance  
-      <br>• High prototyping cost  
-      <br>• Design errors & material waste  
-    </p>
-  </div>
-</div>
-
-<!-- USERS -->
-<div class="section">
-  <h2>Who We Serve</h2>
-
-  <div class="grid">
-    <div class="card">🎓 Engineering Students</div>
-    <div class="card">🏫 Colleges & Faculty</div>
-    <div class="card">🚀 Student Innovators</div>
+  <div class="card">
+    <h3>42–45% graduates lack practical skills</h3>
+    <p>Students struggle with prototyping due to lack of guidance and high costs.</p>
   </div>
 </div>
 
@@ -142,66 +202,32 @@ footer{
   <h2>Platform Features</h2>
 
   <div class="grid">
-    <div class="card">Guided CAD Workflow</div>
-    <div class="card">AI Error Detection</div>
-    <div class="card">Eco Design Tips</div>
-    <div class="card">Templates & Tutorials</div>
-    <div class="card">Material Suggestions</div>
-    <div class="card">Progress Dashboard</div>
+    <div class="card fade">Guided CAD Workflow</div>
+    <div class="card fade">AI Error Detection</div>
+    <div class="card fade">Eco Design Tips</div>
+    <div class="card fade">Templates</div>
+    <div class="card fade">Material Suggestions</div>
+    <div class="card fade">Cloud Dashboard</div>
   </div>
 </div>
 
 <!-- BENEFITS -->
-<div class="section">
-  <h2>Benefits</h2>
+<div class="section fade">
+  <h2>What You Gain</h2>
 
   <div class="grid">
-    <div class="card">⚙️ Faster Prototyping</div>
-    <div class="card">💸 Reduced Cost & Waste</div>
-    <div class="card">😌 Less Stress</div>
-    <div class="card">🏆 Better Results</div>
-  </div>
-</div>
-
-<!-- ADVANTAGE -->
-<div class="section">
-  <h2>Why We Are Different</h2>
-
-  <div class="grid">
-    <div class="card">Guided Learning + CAD</div>
-    <div class="card">AI-based Checks</div>
-    <div class="card">Eco-friendly Approach</div>
-    <div class="card">Built for Students</div>
+    <div class="card">Faster Projects</div>
+    <div class="card">Lower Cost</div>
+    <div class="card">Less Stress</div>
+    <div class="card">Better Results</div>
   </div>
 </div>
 
 <!-- PRICING -->
-<div class="section" id="pricing">
+<div class="section pricing fade" id="pricing">
   <h2>Pricing</h2>
-
-  <div class="highlight">
-    <h3>₹299 / Month</h3>
-    <p>Affordable subscription for students and colleges</p>
-  </div>
-</div>
-
-<!-- TEAM -->
-<div class="section">
-  <h2>Our Team</h2>
-
-  <div class="grid">
-    <div class="card">
-      Krishna Mathur<br>
-      Mechanical Engineer<br>
-      CAD & Prototyping
-    </div>
-
-    <div class="card">
-      Khushi Singh<br>
-      Mechanical Engineer<br>
-      Marketing & Research
-    </div>
-  </div>
+  <h1>₹299 / month</h1>
+  <p>Affordable subscription for students</p>
 </div>
 
 <!-- CONTACT -->
@@ -209,35 +235,30 @@ footer{
   <h2>Contact</h2>
 
   <div class="grid">
-
-    <div class="card">
-      WhatsApp<br>
-      9870694410<br>
-      <a class="btn green" href="https://wa.me/919870694410">Chat</a>
-    </div>
-
-    <div class="card">
-      WhatsApp<br>
-      9528992913<br>
-      <a class="btn green" href="https://wa.me/919528992913">Chat</a>
-    </div>
-
-    <div class="card">
-      Email<br>
-      krishnamathur00001@gmail.com<br>
-      <a class="btn white" href="mailto:krishnamathur00001@gmail.com">Email</a>
-    </div>
-
+    <div class="contact-card">WhatsApp<br>9870694410</div>
+    <div class="contact-card">WhatsApp<br>9528992913</div>
+    <div class="contact-card">Email<br>krishnamathur00001@gmail.com</div>
   </div>
 </div>
 
 </div>
 
-<a class="float" href="https://wa.me/919870694410">💬</a>
-
 <footer>
-  © 2026 Enviromech Solutions | Sustainable Engineering
+© 2026 Enviromech Solutions
 </footer>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
